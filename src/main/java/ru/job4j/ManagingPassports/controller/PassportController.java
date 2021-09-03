@@ -35,14 +35,14 @@ public class PassportController {
         return ResponseEntity.status(status ? HttpStatus.OK : HttpStatus.NOT_FOUND).build();
     }
 
-    @DeleteMapping("/id")
-    public ResponseEntity<Void> delete(@RequestParam int id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable int id) {
         boolean status = service.delete(id);
         return ResponseEntity.status(status ? HttpStatus.OK : HttpStatus.NOT_FOUND).build();
     }
 
-    @GetMapping("/series")
-    public List<Passport> getBySeries(@RequestParam String series) {
+    @GetMapping("/series/{series}")
+    public List<Passport> getBySeries(@PathVariable String series) {
         return service.findBySeries(series);
     }
 

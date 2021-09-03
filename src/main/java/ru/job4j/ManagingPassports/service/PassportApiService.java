@@ -13,6 +13,10 @@ import ru.job4j.managingpassports.model.Passport;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * integration Service
+ */
+
 @Service
 public class PassportApiService implements PassportService {
 
@@ -47,6 +51,17 @@ public class PassportApiService implements PassportService {
                 Void.class).getStatusCode() != HttpStatus.NOT_FOUND;
     }
 
+    private List<Passport> getAll(String url) {
+        List<Passport> list = client.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Passport>>() {
+                }
+        ).getBody();
+        return list == null ? Collections.emptyList() : list;
+    }
+
     @Override
     public List<Passport> findAll() {
         return getAll(url);
@@ -67,14 +82,8 @@ public class PassportApiService implements PassportService {
         return getAll(String.format("%s/replaceable", url));
     }
 
-    private List<Passport> getAll(String url) {
-        List<Passport> list = client.exchange(
-                url,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<List<Passport>>() {
-                }
-        ).getBody();
-        return list == null ? Collections.emptyList() : list;
+    @Override
+    public List<Passport> checkPassportByDate() {
+        return null;
     }
 }

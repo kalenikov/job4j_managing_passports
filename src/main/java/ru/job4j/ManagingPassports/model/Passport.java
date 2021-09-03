@@ -1,5 +1,7 @@
 package ru.job4j.managingpassports.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,12 +11,19 @@ public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
     private String series;
-    @Column
     private int number;
-    @Column(name = "end_date")
+    @JsonFormat(pattern = "dd.MM.yyyy")
     private Date endDate;
+
+    public Passport(String series, int number, Date endDate) {
+        this.series = series;
+        this.number = number;
+        this.endDate = endDate;
+    }
+
+    public Passport() {
+    }
 
     public int getId() {
         return id;
@@ -46,5 +55,15 @@ public class Passport {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Passport{"
+                + "id=" + id
+                + ", series='" + series + '\''
+                + ", number=" + number
+                + ", endDate=" + endDate
+                + '}';
     }
 }
