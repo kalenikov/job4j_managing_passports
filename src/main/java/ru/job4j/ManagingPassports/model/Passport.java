@@ -1,4 +1,4 @@
-package ru.job4j.managingpassports.model;
+package ru.job4j.ManagingPassports.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

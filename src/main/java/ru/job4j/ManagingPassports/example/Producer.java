@@ -1,4 +1,4 @@
-package ru.job4j.managingpassports.example;
+package ru.job4j.ManagingPassports.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;

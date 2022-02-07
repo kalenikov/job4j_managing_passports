@@ -1,4 +1,4 @@
-package ru.job4j.managingpassports.config;
+package ru.job4j.ManagingPassports.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerSerializer;
@@ -9,7 +9,7 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
-import ru.job4j.managingpassports.model.Passport;
+import ru.job4j.ManagingPassports.model.Passport;
 
 import java.util.HashMap;
 import java.util.Map;

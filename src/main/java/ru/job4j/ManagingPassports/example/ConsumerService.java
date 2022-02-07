@@ -1,10 +1,10 @@
-package ru.job4j.managingpassports.example;
+package ru.job4j.ManagingPassports.example;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
-import ru.job4j.managingpassports.model.Passport;
+import ru.job4j.ManagingPassports.model.Passport;
 
 @Service
 public class ConsumerService {

@@ -1,6 +1,7 @@
 package ru.job4j.managingpassports;
 
 import liquibase.integration.spring.SpringLiquibase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -11,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.sql.DataSource;
 
+
 @EnableScheduling
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class Application extends SpringBootServletInitializer {
@@ -20,7 +22,7 @@ public class Application extends SpringBootServletInitializer {
     }
 
     @Bean
-    public SpringLiquibase liquibase(DataSource ds) {
+    public SpringLiquibase liquibase(@Autowired DataSource ds) {
         SpringLiquibase liquibase = new SpringLiquibase();
         liquibase.setChangeLog("classpath:liquibase-changeLog.xml");
         liquibase.setDataSource(ds);

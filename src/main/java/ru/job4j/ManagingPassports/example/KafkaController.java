@@ -1,4 +1,4 @@
-package ru.job4j.managingpassports.example;
+package ru.job4j.ManagingPassports.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +8,11 @@ import javax.websocket.server.PathParam;
 
 @RestController
 public class KafkaController {
-    @Autowired
-    private Producer producer;
+    private final Producer producer;
+
+    public KafkaController(Producer producer) {
+        this.producer = producer;
+    }
 
     @GetMapping("/example")
     public String sendMsg(@PathParam("message") String message) {

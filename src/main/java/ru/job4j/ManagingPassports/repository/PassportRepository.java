@@ -1,9 +1,9 @@
-package ru.job4j.managingpassports.repository;
+package ru.job4j.ManagingPassports.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.job4j.managingpassports.model.Passport;
+import ru.job4j.ManagingPassports.model.Passport;
 
 import java.util.Date;
 import java.util.List;

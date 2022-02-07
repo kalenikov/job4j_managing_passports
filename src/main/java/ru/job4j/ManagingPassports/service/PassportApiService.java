@@ -1,4 +1,4 @@
-package ru.job4j.managingpassports.service;
+package ru.job4j.ManagingPassports.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -8,14 +8,11 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.job4j.managingpassports.model.Passport;
+import ru.job4j.ManagingPassports.model.Passport;
 
 import java.util.Collections;
 import java.util.List;
 
-/**
- * integration Service
- */
 
 @Service
 public class PassportApiService implements PassportService {

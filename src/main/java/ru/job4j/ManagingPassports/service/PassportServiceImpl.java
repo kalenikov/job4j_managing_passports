@@ -1,25 +1,23 @@
-package ru.job4j.managingpassports.service;
+package ru.job4j.ManagingPassports.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import ru.job4j.managingpassports.model.Passport;
-import ru.job4j.managingpassports.repository.PassportRepository;
+import ru.job4j.ManagingPassports.model.Passport;
+import ru.job4j.ManagingPassports.repository.PassportRepository;
 
-import javax.xml.crypto.Data;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class PassportServiceImpl implements PassportService {
     private final PassportRepository repository;
-    @Autowired
-    private KafkaTemplate<Integer, Passport> kafkaTemplate;
+    private final KafkaTemplate<Integer, Passport> kafkaTemplate;
 
-    public PassportServiceImpl(PassportRepository repository) {
+    public PassportServiceImpl(PassportRepository repository, KafkaTemplate<Integer, Passport> kafkaTemplate) {
         this.repository = repository;
+        this.kafkaTemplate = kafkaTemplate;
     }
 
     @Override

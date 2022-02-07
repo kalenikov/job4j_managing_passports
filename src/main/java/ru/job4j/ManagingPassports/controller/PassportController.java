@@ -1,11 +1,11 @@
-package ru.job4j.managingpassports.controller;
+package ru.job4j.ManagingPassports.controller;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.managingpassports.model.Passport;
-import ru.job4j.managingpassports.service.PassportService;
+import ru.job4j.ManagingPassports.model.Passport;
+import ru.job4j.ManagingPassports.service.PassportService;
 
 import java.util.List;
 
